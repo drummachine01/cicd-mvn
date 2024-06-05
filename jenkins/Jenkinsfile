@@ -41,8 +41,8 @@ pipeline {
                 branch "CICD*"
             }
             steps {
-                sh "git config --global user.email sergiocastroabreu@hotmail.com
-                sh "git config --global user.name drummachine01
+                sh "git config --global user.email sergiocastroabreu@hotmail.com"
+                sh "git config --global user.name drummachine01"
                 sh "git checkout -f origin/develop"
                 sh "git merge --ff ${env.GIT_COMMIT}"
                 script {
