@@ -38,7 +38,7 @@ pipeline {
 
         stage('Continuous Integration - Merge to develop') {
             when {
-                branch "CICD-*"
+                branch "CICD*"
             }
             steps {
                 sh "git config --global user.email sergiocastroabreu@hotmail.com
