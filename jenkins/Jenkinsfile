@@ -80,7 +80,7 @@ pipeline {
             }
             steps {
                 withCredentials([usernamePassword(credentialsId: 'nexus-credentials', passwordVariable: 'NEXUS_PASSWORD', usernameVariable: 'NEXUS_USERNAME')]) {
-                    sh "mvn deploy -Dnexus.address=http://${NEXUS_USERNAME}:${NEXUS_PASSWORD}@${env.NEXUS_ADDRESS} -DaltDeploymentRepository=releaseRepository::default::http://${NEXUS_USERNAME}:${NEXUS_PASSWORD}@${env.NEXUS_ADDRESS}/repository/maven-releases -Dskip"Tests"Tests"
+                    sh "mvn deploy -Dnexus.address=http://${NEXUS_USERNAME}:${NEXUS_PASSWORD}@${env.NEXUS_ADDRESS} -DaltDeploymentRepository=releaseRepository::default::http://${NEXUS_USERNAME}:${NEXUS_PASSWORD}@${env.NEXUS_ADDRESS}/repository/maven-releases -DskipTests"
                 }
             }
         }
